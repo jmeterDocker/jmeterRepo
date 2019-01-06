@@ -4,7 +4,7 @@ git clone https://github.com/jmeterDocker/jmeterRepo.git
 # Clean up previous runs
 docker kill $(docker ps -q)
 docker rm $(docker ps -a -q)
-#docker rmi $(docker images -q)
+docker rmi $(docker images -q)
 docker volume rm -f $(docker volume ls -q)
 
 # Prepare volumes and create containers
@@ -18,7 +18,6 @@ docker build -t jmeter-master jmeterRepo/dockerProj/docker-master/
 docker run -d --network host --mount source=jmeter-project,target=/jmeter/master/project --mount source=jmeter-libs,target=/jmeter/apache-jmeter-4.0/lib --name jmeter-master -t jmeter-master
 
 # Run jmeter-slave container
-#docker run -d --network host --mount source=jmeter-project,target=/jmeter/server/project --mount source=jmeter-libs,target=/jmeter/apache-jmeter-4.0/lib --name jmeter-slave -t jmeter-slave -e jmeter_server_port=4000 -e jmeter_rmi_port=50000
 docker run -d --network host --mount source=jmeter-project,target=/jmeter/server/project --mount source=jmeter-libs,target=/jmeter/apache-jmeter-4.0/lib --name jmeter-slave -t jmeter-slave
 
 # Prepare jmeter project and libs

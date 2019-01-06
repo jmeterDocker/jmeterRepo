@@ -4,7 +4,7 @@ git clone https://github.com/jmeterDocker/jmeterRepo.git
 # Clean up previous runs
 docker kill $(docker ps -q)
 docker rm $(docker ps -a -q)
-#docker rmi $(docker images -q)
+docker rmi $(docker images -q)
 docker volume rm -f $(docker volume ls -q)
 
 # Prepare volumes and create containers
