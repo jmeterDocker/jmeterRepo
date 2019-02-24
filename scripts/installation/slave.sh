@@ -1,3 +1,5 @@
+Username=andrzej
+
 JmeterServerPath=/jmeter/server/project
 JmeterApachePath=/jmeter/apache-jmeter-4.0/lib
 JmeterRepoURL=https://github.com/jmeterDocker/jmeterRepo.git
@@ -28,3 +30,4 @@ docker exec jmeter-slave cp -r $JmeterServerPath/jmeter-libs/. $JmeterApachePath
 # Copy file and grant permission
 cp jmeterRepo/scripts/before-run/before-run-slave.sh .
 chmod u+x before-run-slave.sh
+chown $Username:$Username before-run-slave.sh

@@ -1,3 +1,5 @@
+Username=andrzej
+
 JmeterMasterPath=/jmeter/master/project
 JmeterApachePath=/jmeter/apache-jmeter-4.0/lib
 JmeterRepoURL=https://github.com/jmeterDocker/jmeterRepo.git
@@ -28,3 +30,4 @@ docker exec jmeter-master cp -r $JmeterMasterPath/jmeter-libs/. $JmeterApachePat
 # Copy files and grant permission
 cp jmeterRepo/scripts/run-tests/* .
 chmod u+x run-*
+chown $Username:$Username run-*
