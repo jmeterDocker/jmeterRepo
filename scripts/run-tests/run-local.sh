@@ -1,4 +1,4 @@
-MasterUrl=10.10.30.57
+MasterUrl=168.0.0.10
 
 JmeterMasterPath=/jmeter/master/project
 JmeterApachePath=/jmeter/apache-jmeter-4.0/lib

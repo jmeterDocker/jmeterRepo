@@ -1,6 +1,6 @@
-MasterUrl=10.10.30.57
-SlaveUrlList="10.10.30.66"
-SlaveProjectPath=Documents
+MasterUrl=168.0.0.10
+SlaveUrlList="168.0.0.15 168.0.0.20"
+SlaveProjectPath=Performance
 
 JmeterMasterPath=/jmeter/master/project
 JmeterApachePath=/jmeter/apache-jmeter-4.0/lib
@@ -17,7 +17,7 @@ docker exec -it jmeter-master bash -c "rm -f $JmeterMasterPath/log.jtl $JmeterMa
 # Also build string with list of url:port for jmeter command
 for SlaveUrl in $SlaveUrlList
 do
-  ssh $SlaveUrl $SlaveProjectPath/before-run-slave.sh
+  ssh -tt $SlaveUrl $SlaveProjectPath/before-run-slave.sh
   JmeterSlaves="$JmeterSlaves,$SlaveUrl:4000"
 done
 
