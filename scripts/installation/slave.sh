@@ -26,5 +26,5 @@ docker exec jmeter-slave git clone $JmeterRepoURL -b master $JmeterServerPath
 docker exec jmeter-slave cp -r $JmeterServerPath/jmeter-libs/. $JmeterApachePath
 
 # Copy file and grant permission
-cp jmeterRepo/scripts/before-run/before-run-slave.sh
+cp jmeterRepo/scripts/before-run/before-run-slave.sh .
 chmod u+x before-run-slave.sh
