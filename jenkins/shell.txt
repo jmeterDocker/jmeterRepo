@@ -1,0 +1,6 @@
+MasterRemotePath=Performance
+MasterUserURL=andrzej@10.10.10.10
+
+ssh -tt $MasterUserURL "sh -c \"cd $MasterRemotePath; ./run-remote.sh\""
+scp $MasterUserURL:$MasterRemotePath/log.jtl .
+scp $MasterUserURL:$MasterRemotePath/jmeter.log .
